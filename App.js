@@ -8,6 +8,8 @@ import MoreArtist from "./screens/tabone/MoreArtist";
 import MoreGenre from "./screens/tabone/MoreGenre";
 import SearchMuseum from "./screens/tabthree/SearchMuseum";
 import { FontAwesome } from "@expo/vector-icons";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import EvilIcons from "@expo/vector-icons";
 
 export default function Navigation() {
   return (
@@ -25,25 +27,25 @@ function RootNavigator() {
     <Tab.Navigator
       initialRouteName="Main"
       screenOptions={({ route }) => ({
-        TabBarIcon: ({ focused, color, size }) => {
+        TabBarIcon: ({}) => {
           let iconName;
 
           if (route.name === "Main") {
-            iconName = focused ? "search" : "search";
+            iconName = "search";
           } else if (route.name === "Recommend") {
-            iconName = focused ? "random" : "random";
+            iconName = "random";
           } else if (route.name === "SearchMuseum") {
-            iconName = focused ? "compass" : "compass";
+            iconName = "compass";
           }
-          return <FontAwesome name={iconName} size={size} color={color} />;
+          return <EvilIcons name={iconName} />;
         },
         headerShown: false,
         tabBarActiveTintColor: "White",
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name="Main" component={SearchArt} />
       <Tab.Screen name="Recommendtab" component={Recommendtab} />
+      <Tab.Screen name="Main" component={SearchArt} />
       <Tab.Screen name="SearchMuseum" component={SearchMuseum} />
     </Tab.Navigator>
   );

@@ -11,7 +11,7 @@ import {
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-export default function MoreGenre({ navigation }) {
+export default function MoreArtist({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
