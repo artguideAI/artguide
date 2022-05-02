@@ -23,7 +23,7 @@ export default function Recommend({ navigation }) {
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
         <ImageBackground
-          source={require("C:/app-artguide/assets/img1.jpg")}
+          source={require("../../assets/img1.jpg")}
           style={styles.backgroundImage}
         >
           <Text style={styles.mainImgname}>작품이름</Text>

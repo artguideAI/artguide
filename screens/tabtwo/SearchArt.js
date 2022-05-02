@@ -2,6 +2,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ImageBackground,
+  ScrollView,
   Text,
   View,
 } from "react-native";
@@ -30,7 +31,7 @@ export default function SearchArt({ navigation }) {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("C:/app-artguide/assets/artSearchBack.jpg")}
+        source={require("../../assets/artSearchBack.jpg")}
         resizeMode="cover"
         style={styles.bgImage}
       >
@@ -50,10 +51,14 @@ export default function SearchArt({ navigation }) {
         </TouchableOpacity>
         <View style={styles.container2}>
           <Text style={styles.artHistoryTop}>History</Text>
-          <View style={styles.container3}>
+          <ScrollView
+            showsHorizontalScrollIndicator={false}
+            horizontal={true}
+            style={styles.container3}
+          >
             <TouchableOpacity activeOpacity={0.8}>
               <ImageBackground
-                source={require("C:/app-artguide/assets/img1.jpg")}
+                source={require("../../assets/img1.jpg")}
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
@@ -63,7 +68,7 @@ export default function SearchArt({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8}>
               <ImageBackground
-                source={require("C:/app-artguide/assets/img2.jpg")}
+                source={require("../../assets/img2.jpg")}
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
@@ -71,7 +76,47 @@ export default function SearchArt({ navigation }) {
                 <Text style={styles.artHistoryArtist}>artist2</Text>
               </ImageBackground>
             </TouchableOpacity>
-          </View>
+            <TouchableOpacity activeOpacity={0.8}>
+              <ImageBackground
+                source={require("../../assets/img1.jpg")}
+                style={styles.arthistory}
+                imageStyle={styles.artHistoryImage}
+              >
+                <Text style={styles.artHistoryTitle}>title1</Text>
+                <Text style={styles.artHistoryArtist}>artist1</Text>
+              </ImageBackground>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
+              <ImageBackground
+                source={require("../../assets/img2.jpg")}
+                style={styles.arthistory}
+                imageStyle={styles.artHistoryImage}
+              >
+                <Text style={styles.artHistoryTitle}>title2</Text>
+                <Text style={styles.artHistoryArtist}>artist2</Text>
+              </ImageBackground>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
+              <ImageBackground
+                source={require("../../assets/img1.jpg")}
+                style={styles.arthistory}
+                imageStyle={styles.artHistoryImage}
+              >
+                <Text style={styles.artHistoryTitle}>title1</Text>
+                <Text style={styles.artHistoryArtist}>artist1</Text>
+              </ImageBackground>
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={0.8}>
+              <ImageBackground
+                source={require("../../assets/img2.jpg")}
+                style={styles.arthistory}
+                imageStyle={styles.artHistoryImage}
+              >
+                <Text style={styles.artHistoryTitle}>title2</Text>
+                <Text style={styles.artHistoryArtist}>artist2</Text>
+              </ImageBackground>
+            </TouchableOpacity>
+          </ScrollView>
         </View>
       </ImageBackground>
     </View>
