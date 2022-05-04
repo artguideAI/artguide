@@ -36,12 +36,6 @@ export default function SearchArt({ navigation }) {
         style={styles.bgImage}
       >
         <TouchableOpacity
-          style={styles.backIcon}
-          onPress={() => navigation.pop()}
-        >
-          <Ionicons name="arrow-back" size={24} color="black" />
-        </TouchableOpacity>
-        <TouchableOpacity
           activeOpacity={0.7}
           style={styles.imguploadbt}
           onPress={openImagePickerAsync}
@@ -128,12 +122,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container2: {
-    marginBottom: -20,
-    height: 100,
+    height: "50%",
     width: "100%",
     borderRadius: 16,
     backgroundColor: "rgba(240, 240, 240, 0.48)",
-    flex: 1,
+    position:"absolute",
+    bottom:-50,
     justifyContent: "flex-start",
     alignItems: "flex-start",
     flexDirection: "column",

@@ -1,42 +1,35 @@
 import {
   StyleSheet,
   TouchableOpacity,
-  ImageBackground,
+  Image,
   SafeAreaView,
   ScrollView,
   Text,
   View,
 } from "react-native";
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { CurrentRenderContext, NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Recommend({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>
-        <TouchableOpacity
-          style={styles.backIcon}
-          onPress={() => navigation.goBack()}
-        >
-          <Ionicons name="arrow-back" size={24} color="black" />
-        </TouchableOpacity>
-        <ImageBackground
+      <ScrollView style={styles.scrollView}>          
+        <Image
           source={require("../../assets/img1.jpg")}
           style={styles.backgroundImage}
         >
-          <Text style={styles.mainImgname}>작품이름</Text>
-        </ImageBackground>
-
+        </Image>
+        <Text style={styles.mainImgname}>작품이름</Text>
         <View style={styles.randomSubject}>
           <View style={styles.randomSubjectTitle}>
             <Text style={{ fontSize: 20 }}>ArtistName</Text>
             <TouchableOpacity
               onPress={() => navigation.navigate("MoreArtist")}
-              style={{ backgroundColor: "blue" }}
+              style={styles.morebuttoncontainer}
             >
-              <Text style={{ fontSize: 20, color: "#fff" }}>더보기</Text>
+              <Text style={styles.morebuttontext}>더보기</Text>
             </TouchableOpacity>
           </View>
           <ScrollView
@@ -44,20 +37,25 @@ export default function Recommend({ navigation }) {
             horizontal={true}
             style={styles.randomContentBox}
           >
-            <View style={styles.randomContent}>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
               <Text style={styles.randomCName}>1</Text>
             </View>
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>2</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>3</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>4</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>5</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
             {/* 최대 10개만나오게>?*/}
           </ScrollView>
@@ -68,9 +66,9 @@ export default function Recommend({ navigation }) {
             <Text style={{ fontSize: 20 }}>GenreName</Text>
             <TouchableOpacity
               onPress={() => navigation.navigate("MoreGenre")}
-              style={{ backgroundColor: "blue" }}
+              style={styles.morebuttoncontainer}
             >
-              <Text style={{ fontSize: 20, color: "#fff" }}>더보기</Text>
+              <Text style={styles.morebuttontext}>더보기</Text>
             </TouchableOpacity>
           </View>
 
@@ -79,22 +77,28 @@ export default function Recommend({ navigation }) {
             horizontal={true}
             style={styles.randomContentBox}
           >
-            <View style={styles.randomContent}>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
               <Text style={styles.randomCName}>1</Text>
             </View>
 
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>2</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>3</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>4</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
-            <View style={styles.randomContent}>
-              <Text style={styles.randomCName}>5</Text>
+            <View style={styles.rdctsctn}>
+              <View style={styles.randomContent}/>
+              <Text style={styles.randomCName}>1</Text>
             </View>
+
             {/* 최대 10개만나오게>?*/}
           </ScrollView>
         </View>
@@ -113,9 +117,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   backgroundImage: {
-    flex: 1,
-    height: 700,
-    width: "100%",
+    width:"100%",
+    height:"100%",
+    resizeMode:"contain",
   },
   randomItem: {},
   randomSubject: {
@@ -123,8 +127,9 @@ const styles = StyleSheet.create({
   },
   mainImgname: {
     fontSize: 30,
-    color: "white",
+    color: "black",
     alignItems: "flex-end",
+    textAlign: "center",
   },
   randomContent: {
     width: 100,
@@ -134,16 +139,29 @@ const styles = StyleSheet.create({
   },
   randomContentBox: {
     flexDirection: "row",
+    textAlign: "center",
   },
-  randomCName: {},
+  rdctsctn: {
+    flexDirection: "column"
+  },
+  randomCName: {
+    textAlign: "center",
+  },
   randomSubjectTitle: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  scrollView: {},
+  scrollView: {
+    paddingBottom:100,
+  },
   backIcon: {
     marginLeft: 20,
     marginTop: 60,
     flex: 1,
   },
+  morebuttontext: {
+    fontSize: 18,
+    color:"grey",
+  },
+  morebuttoncontainer: {},
 });
