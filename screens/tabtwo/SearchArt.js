@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Feather } from "@expo/vector-icons";
-
+import { Camera } from 'expo-camera'; 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as ImagePicker from "expo-image-picker";
@@ -35,14 +35,28 @@ export default function SearchArt({ navigation }) {
         resizeMode="cover"
         style={styles.bgImage}
       >
-        <TouchableOpacity
-          activeOpacity={0.7}
-          style={styles.imguploadbt}
-          onPress={openImagePickerAsync}
+        <View style={styles.imgcamcontainer}
+          color="blue"
         >
-          <Feather name="upload" size={24} color="black" />
-          <Text style={styles.text}>Image Upload</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            style={styles.imguploadbt}
+            onPress={openImagePickerAsync}
+          >
+            <Feather name="upload" size={24} color="black" />
+            <Text style={styles.text}>Album</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+              activeOpacity={0.7}
+                onPress={() => navigation.navigate("camera")}
+                style={styles.imguploadbt}
+          >
+            <Feather name="camera" size={24} color="black" />
+            <Text style={styles.text}>Camera</Text>
+          </TouchableOpacity>
+        </View>
+
         <View style={styles.container2}>
           <Text style={styles.artHistoryTop}>History</Text>
           <ScrollView
@@ -149,9 +163,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   imguploadbt: {
-    position: "absolute",
+    position: "relative",
     padding: 20,
-    width: 250,
+    width: 100,
     height: 100,
     top: "20%",
     left: "18%",
@@ -159,7 +173,15 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     justifyContent: "space-around",
     alignItems: "center",
-    flexDirection: "row",
+    flexDirection: "column",
+
+  },
+  imgcamcontainer:{
+    flexDirection:"row",
+    position: "absolute",
+    top:"15%",
+    left:"20%"
+
   },
   text: {
     color: "#000",

@@ -8,6 +8,7 @@ import MoreArtist from "./screens/tabone/MoreArtist";
 import MoreGenre from "./screens/tabone/MoreGenre";
 import SearchMuseum from "./screens/tabthree/SearchMuseum";
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
+import camera from "./component/camera";
 
 export default function Navigation() {
   return (
@@ -31,7 +32,7 @@ function RootNavigator() {
       })}
     >
       <Tab.Screen name="Recommendtab" component={Recommendtab} options={{ tabBarIcon: () => ( <FontAwesome name="random" size={24} color="black" />),}}/>
-      <Tab.Screen name="Main" component={SearchArt} options={{ tabBarIcon: () => ( <Ionicons name="search" size={24} color="black" />),}}/>
+      <Tab.Screen name="MainTab" component={MainTab} options={{ tabBarIcon: () => ( <Ionicons name="search" size={24} color="black" />),}}/>
       <Tab.Screen name="SearchMuseum" component={SearchMuseum} options={{ tabBarIcon: () => ( <FontAwesome name="map-marker" size={24} color="black" />),}}/>
     </Tab.Navigator>
   );
@@ -43,6 +44,14 @@ function Recommendtab() {
       <Tab.Screen name="Recommend" component={Recommend} />
       <Stack.Screen name="MoreArtist" component={MoreArtist} />
       <Stack.Screen name="MoreGenre" component={MoreGenre} />
+    </Stack.Navigator>
+  );
+}
+function MainTab() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen name="Main" component={SearchArt} />
+      <Stack.Screen name="camera" component={camera} />
     </Stack.Navigator>
   );
 }
