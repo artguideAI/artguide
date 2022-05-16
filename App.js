@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import SearchArt from "./screens/tabtwo/SearchArt";
@@ -9,31 +9,35 @@ import MoreGenre from "./screens/tabone/MoreGenre";
 import SearchMuseum from "./screens/tabthree/SearchMuseum";
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import camera from "./component/camera";
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 export default function Navigation() {
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <RootNavigator />
     </NavigationContainer>
   );
 }
 
 const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
+
+
 
 function RootNavigator() {
   return (
-    <Tab.Navigator
-      initialRouteName="Main"
+    <Tab.Navigator 
+      initialRouteName="작품검색"
+      barStyle={{ backgroundColor: 'black' }}
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarActiveTintColor: "White",
-        tabBarInactiveTintColor: "gray",
+        activeColor: "White",
+        inactiveColor: "gray",
       })}
     >
-      <Tab.Screen name="Recommendtab" component={Recommendtab} options={{ tabBarIcon: () => ( <FontAwesome name="random" size={24} color="black" />),}}/>
-      <Tab.Screen name="MainTab" component={MainTab} options={{ tabBarIcon: () => ( <Ionicons name="search" size={24} color="black" />),}}/>
-      <Tab.Screen name="SearchMuseum" component={SearchMuseum} options={{ tabBarIcon: () => ( <FontAwesome name="map-marker" size={24} color="black" />),}}/>
+      <Tab.Screen name="추천" component={Recommendtab} options={{ tabBarIcon: ({color}) => ( <FontAwesome name="random" size={24} color={color} />),}}/>
+      <Tab.Screen name="작품검색" component={MainTab} options={{ tabBarIcon: ({color}) => ( <Ionicons name="search" size={24} color={color} />),}}/>
+      <Tab.Screen name="미술관검색" component={SearchMuseum} options={{ tabBarIcon: ({color}) => ( <FontAwesome name="map-marker" size={24} color={color} />),}}/>
     </Tab.Navigator>
   );
 }

@@ -6,13 +6,17 @@ import {
   ScrollView,
   Text,
   View,
+  Dimensions
 } from "react-native";
 import React from "react";
 import { CurrentRenderContext, NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
+
+
 export default function Recommend({ navigation }) {
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>          
@@ -33,6 +37,7 @@ export default function Recommend({ navigation }) {
             </TouchableOpacity>
           </View>
           <ScrollView
+            nestedScrollEnabled={true}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             style={styles.randomContentBox}
@@ -73,6 +78,7 @@ export default function Recommend({ navigation }) {
           </View>
 
           <ScrollView
+            nestedScrollEnabled={true}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             style={styles.randomContentBox}
@@ -117,9 +123,8 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   backgroundImage: {
-    width:"100%",
-    height:"100%",
-    resizeMode:"contain",
+    width: "${Dimensions.get('window').width * 0.9}px",
+    height:"100%"
   },
   randomItem: {},
   randomSubject: {
@@ -152,7 +157,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   scrollView: {
-    paddingBottom:100,
+    flex: 1,
   },
   backIcon: {
     marginLeft: 20,

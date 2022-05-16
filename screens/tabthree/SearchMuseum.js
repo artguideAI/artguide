@@ -1,39 +1,34 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import MapView from "react-native-maps";
-import { StyleSheet, View, Dimensions, SafeAreaView, ActivityIndicator } from "react-native";
-import SearchBar from "../../component/SearchBar";
+import { StyleSheet, View, Dimensions, SafeAreaView, ActivityIndicator, TextInput, Touchable } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import { TouchableOpacity } from "react-native-web";
 
 
 
 export default function SearchMuseum() {
-  const [searchPhrase, setSearchPhrase] = useState("");
-  const [clicked, setClicked] = useState(false);
-  const [fakeData, setFakeData] = useState();
-
-  // get data from the fake api endpoint
-  useEffect(() => {
-    const getData = async () => {
-      const apiResponse = await fetch(
-        "https://my-json-server.typicode.com/kevintomas1995/logRocket_searchBar/languages"
-      );
-      const data = await apiResponse.json();
-      setFakeData(data);
-    };
-    getData();
-  }, []);
 
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.container}>
         <MapView style={styles.map}>
-        <SearchBar
-          searchPhrase={searchPhrase}
-          setSearchPhrase={setSearchPhrase}
-          clicked={clicked}
-          setClicked={setClicked}
-          style={styles.SearchB}
-        />
+          <View style={styles.consearchbar}>
+            <TextInput
+              style={styles.SearchB}
+              placeholder = "위치"
+            >
+            </TextInput>
+            <TextInput
+              style={styles.SearchB}
+              placeholder = "검색어"
+            >
+            </TextInput>
+          </View>
+
+          <View style={styles.historybar}>            
+            
+          </View>
         </MapView>
       </View>
     </SafeAreaView>
@@ -49,6 +44,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  consearchbar: {
+    justifyContent: "space-around",
+    flexDirection: "row"
+  },
   map: {
     display: "flex",
     flexDirection: "column",
@@ -56,5 +55,35 @@ const styles = StyleSheet.create({
     height: Dimensions.get("window").height,
   },
   SearchB: {
+    backgroundColor : "white",
+    marginTop: 20,
+    width: 160,
+    height: 45,
+    margin: 10,
+    padding: 10,
+    borderRadius: 20,
+    borderWidth: 1.5,
+
+    
   },
+  searchbutton: {
+
+  },
+  historybar: {
+    height: "50%",
+    width: "100%",
+    borderRadius: 16,
+    backgroundColor: "white",
+    position:"absolute",
+    bottom:-10,
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    flexDirection: "column",
+  },
+  containermyloca:{
+    width: 50,
+    height:50,
+    borderRadius:100,
+    backgroundColor:"white",
+  }
   });
