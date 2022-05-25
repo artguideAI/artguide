@@ -9,34 +9,59 @@ import {
   SafeAreaView,
 } from "react-native";
 import React from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { Feather } from "@expo/vector-icons";
-import { Camera } from "expo-camera";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import * as ImagePicker from "expo-image-picker";
 
 export default function SearchArt_simiimage({ navigation }) {
+  let count = 5;
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.useruploadimage}>
           <Text style={styles.text}>업로드한 이미지</Text>
         </View>
+        <Text style={styles.text}>유사한 이미지 {count}개를 찾았습니다.</Text>
         <View style={styles.simiimagescontainer}>
-          <Text style={styles.text}>유사한 이미지 N개를 찾았습니다.</Text>
           <View style={styles.simiimages}>
-            <View style={styles.simiimage}></View>
-            <View style={styles.simiimage}></View>
-            <View style={styles.simiimage}></View>
-            <View style={styles.simiimage}></View>
-            <View style={styles.simiimage}></View>
+            <TouchableOpacity>
+              <Image
+                style={styles.simiimage}
+                source={require("../../assets/img5.jpg")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                style={styles.simiimage}
+                source={require("../../assets/img1.jpg")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                style={styles.simiimage}
+                source={require("../../assets/img2.jpg")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                style={styles.simiimage}
+                source={require("../../assets/img3.jpg")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image
+                style={styles.simiimage}
+                source={require("../../assets/img4.jpg")}
+              />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.bingcontainer}>
-          <Text style={{ textAlign: "center" }}>다른 작품을 찾으시나요?</Text>
-          <TouchableOpacity>
-            <Text style={{ textAlign: "center" }}>검색으로 이동</Text>
+          <Text style={styles.bingbttitle}>다른 작품을 찾으시나요?</Text>
+          <TouchableOpacity style={styles.bingbutton}>
+            <Image
+              style={styles.binglogo}
+              source={require("../../assets/binglogo.jpg")}
+            />
+            <Text style={styles.bingbttext}>검색으로 이동</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -54,7 +79,13 @@ const styles = StyleSheet.create({
     backgroundColor: "grey",
   },
   text: {},
-  simiimagescontainer: {},
+  simiimagescontainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "auto",
+    margin: 10,
+    flexWrap: "wrap",
+  },
   simiimages: {
     display: "flex",
     flexDirection: "row",
@@ -62,18 +93,45 @@ const styles = StyleSheet.create({
   },
   simiimage: {
     backgroundColor: "grey",
-    width: 70,
-    height: 70,
+    height: 150,
+    width: 150,
     margin: 10,
   },
   bingcontainer: {
-    backgroundColor: "grey",
-    display: "flex",
+    backgroundColor: "lightgrey",
     flexDirection: "column",
-    justifyContent: "center",
-    margin: 30,
+    justifyContent: "space-evenly",
+    margin: 10,
     borderRadius: 10,
-    height: 50,
+    width: "auto",
+    height: 130,
+    padding: 10,
+  },
+  text: {
     textAlign: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    margin: 10,
+  },
+  bingbttitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  bingbutton: {
+    backgroundColor: "white",
+    padding: 10,
+    borderRadius: 50,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+  },
+  bingbttext: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  binglogo: {
+    height: 20,
+    width: 50,
   },
 });

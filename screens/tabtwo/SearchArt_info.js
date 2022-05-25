@@ -15,7 +15,7 @@ export default function SearchArt_info({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <Image width="100%" source={require("../../assets/img7.jpg")} />
+        <Image width="100%" source={require("../../assets/img6.jpg")} />
         <View style={styles.artinfocontainer}>
           <Text style={styles.title}>작품명</Text>
           <Text style={styles.artistname}>작가명</Text>

@@ -9,7 +9,7 @@ import {
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Feather } from "@expo/vector-icons";
-import { Camera } from 'expo-camera'; 
+import { Camera } from "expo-camera";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as ImagePicker from "expo-image-picker";
@@ -35,9 +35,7 @@ export default function SearchArt({ navigation }) {
         resizeMode="cover"
         style={styles.bgImage}
       >
-        <View style={styles.imgcamcontainer}
-          color="blue"
-        >
+        <View style={styles.imgcamcontainer} color="blue">
           <TouchableOpacity
             activeOpacity={0.7}
             style={styles.imguploadbt}
@@ -48,9 +46,9 @@ export default function SearchArt({ navigation }) {
           </TouchableOpacity>
 
           <TouchableOpacity
-              activeOpacity={0.7}
-                onPress={() => navigation.navigate("camera")}
-                style={styles.imguploadbt}
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate("camera")}
+            style={styles.imguploadbt}
           >
             <Feather name="camera" size={24} color="black" />
             <Text style={styles.text}>Camera</Text>
@@ -86,7 +84,7 @@ export default function SearchArt({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8}>
               <ImageBackground
-                source={require("../../assets/img1.jpg")}
+                source={require("../../assets/img3.jpg")}
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
@@ -96,7 +94,7 @@ export default function SearchArt({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8}>
               <ImageBackground
-                source={require("../../assets/img2.jpg")}
+                source={require("../../assets/img4.jpg")}
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
@@ -106,7 +104,7 @@ export default function SearchArt({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8}>
               <ImageBackground
-                source={require("../../assets/img1.jpg")}
+                source={require("../../assets/img5.jpg")}
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
@@ -116,7 +114,7 @@ export default function SearchArt({ navigation }) {
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.8}>
               <ImageBackground
-                source={require("../../assets/img2.jpg")}
+                source={require("../../assets/img6.jpg")}
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
@@ -140,8 +138,8 @@ const styles = StyleSheet.create({
     width: "100%",
     borderRadius: 16,
     backgroundColor: "rgba(240, 240, 240, 0.48)",
-    position:"absolute",
-    bottom:-50,
+    position: "absolute",
+    bottom: -50,
     justifyContent: "flex-start",
     alignItems: "flex-start",
     flexDirection: "column",
@@ -174,14 +172,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "column",
-
   },
-  imgcamcontainer:{
-    flexDirection:"row",
+  imgcamcontainer: {
+    flexDirection: "row",
     position: "absolute",
-    top:"15%",
-    left:"20%"
-
+    top: "15%",
+    left: "20%",
   },
   text: {
     color: "#000",

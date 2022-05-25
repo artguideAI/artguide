@@ -27,7 +27,7 @@ const Tab = createMaterialBottomTabNavigator();
 function RootNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName="임시"
+      initialRouteName="작품검색"
       barStyle={{ backgroundColor: "black" }}
       screenOptions={({ route }) => ({
         headerShown: false,
@@ -38,15 +38,6 @@ function RootNavigator() {
       <Tab.Screen
         name="추천"
         component={Recommendtab}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <FontAwesome name="random" size={24} color={color} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="임시"
-        component={SearchArt_info}
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome name="random" size={24} color={color} />
