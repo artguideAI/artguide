@@ -6,25 +6,24 @@ import {
   ScrollView,
   Text,
   View,
-  Dimensions
+  Dimensions,
 } from "react-native";
 import React from "react";
-import { CurrentRenderContext, NavigationContainer } from "@react-navigation/native";
+import {
+  CurrentRenderContext,
+  NavigationContainer,
+} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-
-
 export default function Recommend({ navigation }) {
-
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.scrollView}>          
+      <ScrollView style={styles.scrollView}>
         <Image
           source={require("../../assets/img1.jpg")}
           style={styles.backgroundImage}
-        >
-        </Image>
+        ></Image>
         <Text style={styles.mainImgname}>작품이름</Text>
         <View style={styles.randomSubject}>
           <View style={styles.randomSubjectTitle}>
@@ -43,23 +42,23 @@ export default function Recommend({ navigation }) {
             style={styles.randomContentBox}
           >
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             {/* 최대 10개만나오게>?*/}
@@ -84,24 +83,24 @@ export default function Recommend({ navigation }) {
             style={styles.randomContentBox}
           >
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
 
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
             <View style={styles.rdctsctn}>
-              <View style={styles.randomContent}/>
+              <View style={styles.randomContent} />
               <Text style={styles.randomCName}>1</Text>
             </View>
 
@@ -116,15 +115,14 @@ export default function Recommend({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
   },
   title: {
     fontSize: 20,
     fontWeight: "bold",
   },
   backgroundImage: {
-    width: "${Dimensions.get('window').width * 0.9}px",
-    height:"100%"
+    width: "100%",
+    height: "100%",
   },
   randomItem: {},
   randomSubject: {
@@ -147,7 +145,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   rdctsctn: {
-    flexDirection: "column"
+    flexDirection: "column",
   },
   randomCName: {
     textAlign: "center",
@@ -166,7 +164,7 @@ const styles = StyleSheet.create({
   },
   morebuttontext: {
     fontSize: 18,
-    color:"grey",
+    color: "grey",
   },
   morebuttoncontainer: {},
 });
