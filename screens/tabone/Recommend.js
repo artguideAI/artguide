@@ -17,6 +17,19 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 export default function Recommend({ navigation }) {
+  const randomArtistItem = new Array(10).fill(null).map((notUsed, index) => (
+    <View style={styles.rdctsctn}>
+      <View style={styles.randomContent} />
+      <Text style={styles.randomCName}>{index}</Text>
+    </View>
+  ));
+  const randomGenreItem = new Array(10).fill(null).map((notUsed, index) => (
+    <View style={styles.rdctsctn}>
+      <View style={styles.randomContent} />
+      <Text style={styles.randomCName}>{index}</Text>
+    </View>
+  ));
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView}>
@@ -41,27 +54,7 @@ export default function Recommend({ navigation }) {
             horizontal={true}
             style={styles.randomContentBox}
           >
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            {/* 최대 10개만나오게>?*/}
+            {randomArtistItem}
           </ScrollView>
         </View>
 
@@ -82,29 +75,7 @@ export default function Recommend({ navigation }) {
             horizontal={true}
             style={styles.randomContentBox}
           >
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-            <View style={styles.rdctsctn}>
-              <View style={styles.randomContent} />
-              <Text style={styles.randomCName}>1</Text>
-            </View>
-
-            {/* 최대 10개만나오게>?*/}
+            {randomGenreItem}
           </ScrollView>
         </View>
       </ScrollView>
