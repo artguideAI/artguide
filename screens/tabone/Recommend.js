@@ -104,6 +104,8 @@ const styles = StyleSheet.create({
     color: "black",
     alignItems: "flex-end",
     textAlign: "center",
+    fontWeight: "bold",
+    margin: 10,
   },
   randomContent: {
     width: 100,
