@@ -9,6 +9,7 @@ import Recommend from "./screens/tabone/Recommend";
 import MoreArtist from "./screens/tabone/MoreArtist";
 import MoreGenre from "./screens/tabone/MoreGenre";
 import SearchMuseum from "./screens/tabthree/SearchMuseum";
+import MuseumInfo from "./screens/tabthree/MuseumInfo";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 import camera from "./component/camera";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -55,7 +56,7 @@ function RootNavigator() {
       />
       <Tab.Screen
         name="미술관검색"
-        component={SearchMuseum}
+        component={MuseumTab}
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome name="map-marker" size={24} color={color} />
@@ -80,6 +81,20 @@ function MainTab() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen name="Main" component={SearchArt} />
       <Stack.Screen name="camera" component={camera} />
+      <Stack.Screen
+        name="SearchArt_simiimage"
+        component={SearchArt_simiimage}
+      />
+      <Stack.Screen name="SearchArt_info" component={SearchArt_info} />
+    </Stack.Navigator>
+  );
+}
+
+function MuseumTab() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen name="SearchMuseum" component={SearchMuseum} />
+      <Stack.Screen name="MuseumInfo" component={MuseumInfo} />
     </Stack.Navigator>
   );
 }

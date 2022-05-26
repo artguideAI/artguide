@@ -7,7 +7,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { Camera } from "expo-camera";
 import { NavigationContainer } from "@react-navigation/native";
@@ -35,6 +35,13 @@ export default function SearchArt({ navigation }) {
         resizeMode="cover"
         style={styles.bgImage}
       >
+        <TouchableOpacity
+          onPress={() => navigation.navigate("SearchArt_simiimage")}
+        >
+          <View style={styles.dlatl}>
+            <Text>임시</Text>
+          </View>
+        </TouchableOpacity>
         <View style={styles.imgcamcontainer} color="blue">
           <TouchableOpacity
             activeOpacity={0.7}
@@ -68,6 +75,11 @@ export default function SearchArt({ navigation }) {
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
+                <TouchableOpacity style={styles.deleteh}>
+                  <View>
+                    <AntDesign name="closecircle" size={20} color="black" />
+                  </View>
+                </TouchableOpacity>
                 <Text style={styles.artHistoryTitle}>title1</Text>
                 <Text style={styles.artHistoryArtist}>artist1</Text>
               </ImageBackground>
@@ -78,6 +90,11 @@ export default function SearchArt({ navigation }) {
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
+                <TouchableOpacity style={styles.deleteh}>
+                  <View>
+                    <AntDesign name="closecircle" size={20} color="black" />
+                  </View>
+                </TouchableOpacity>
                 <Text style={styles.artHistoryTitle}>title2</Text>
                 <Text style={styles.artHistoryArtist}>artist2</Text>
               </ImageBackground>
@@ -88,6 +105,11 @@ export default function SearchArt({ navigation }) {
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
+                <TouchableOpacity style={styles.deleteh}>
+                  <View>
+                    <AntDesign name="closecircle" size={20} color="black" />
+                  </View>
+                </TouchableOpacity>
                 <Text style={styles.artHistoryTitle}>title1</Text>
                 <Text style={styles.artHistoryArtist}>artist1</Text>
               </ImageBackground>
@@ -98,6 +120,11 @@ export default function SearchArt({ navigation }) {
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
+                <TouchableOpacity style={styles.deleteh}>
+                  <View>
+                    <AntDesign name="closecircle" size={20} color="black" />
+                  </View>
+                </TouchableOpacity>
                 <Text style={styles.artHistoryTitle}>title2</Text>
                 <Text style={styles.artHistoryArtist}>artist2</Text>
               </ImageBackground>
@@ -108,6 +135,11 @@ export default function SearchArt({ navigation }) {
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
+                <TouchableOpacity style={styles.deleteh}>
+                  <View>
+                    <AntDesign name="closecircle" size={20} color="black" />
+                  </View>
+                </TouchableOpacity>
                 <Text style={styles.artHistoryTitle}>title1</Text>
                 <Text style={styles.artHistoryArtist}>artist1</Text>
               </ImageBackground>
@@ -118,6 +150,11 @@ export default function SearchArt({ navigation }) {
                 style={styles.arthistory}
                 imageStyle={styles.artHistoryImage}
               >
+                <TouchableOpacity style={styles.deleteh}>
+                  <View>
+                    <AntDesign name="closecircle" size={20} color="black" />
+                  </View>
+                </TouchableOpacity>
                 <Text style={styles.artHistoryTitle}>title2</Text>
                 <Text style={styles.artHistoryArtist}>artist2</Text>
               </ImageBackground>
@@ -216,4 +253,11 @@ const styles = StyleSheet.create({
     color: "white",
   },
   artHistoryArtist: { fontSize: 16, color: "white" },
+  dlatl: {
+    backgroundColor: "grey",
+    width: 30,
+    height: 30,
+    borderRadius: 50,
+  },
+  deleteh: {},
 });

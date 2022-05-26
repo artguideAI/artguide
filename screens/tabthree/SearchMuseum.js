@@ -7,14 +7,17 @@ import {
   Dimensions,
   SafeAreaView,
   ActivityIndicator,
+  Text,
   TextInput,
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { getLocation } from "react-native-element/Library/react-native-element-core/API/ENativeSystemApi";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function SearchMuseum() {
+export default function SearchMuseum({ navigation }) {
   const [location, setLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
   const [initialRegion, setInitialRegion] = useState({
@@ -63,6 +66,11 @@ export default function SearchMuseum() {
           <TouchableOpacity activeOpacity={0.7}>
             <View style={styles.containermyloca}>
               <Ionicons name="locate-outline" size="30"></Ionicons>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("MuseumInfo")}>
+            <View style={styles.dlatl}>
+              <Text>임시</Text>
             </View>
           </TouchableOpacity>
 
@@ -120,5 +128,11 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
+  },
+  dlatl: {
+    backgroundColor: "grey",
+    width: 30,
+    height: 30,
+    borderRadius: 50,
   },
 });

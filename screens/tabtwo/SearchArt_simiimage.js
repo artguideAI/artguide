@@ -22,7 +22,9 @@ export default function SearchArt_simiimage({ navigation }) {
         <Text style={styles.text}>유사한 이미지 {count}개를 찾았습니다.</Text>
         <View style={styles.simiimagescontainer}>
           <View style={styles.simiimages}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("SearchArt_info")}
+            >
               <Image
                 style={styles.simiimage}
                 source={require("../../assets/img5.jpg")}
