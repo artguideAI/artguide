@@ -7,9 +7,9 @@ import {
   ScrollView,
   Text,
   View,
-} from "react-native";
-import React from "react";
-import Ionicons from "@expo/vector-icons/Ionicons";
+} from 'react-native'
+import React from 'react'
+import Ionicons from '@expo/vector-icons/Ionicons'
 
 export default function MoreArtist({ navigation }) {
   return (
@@ -32,178 +32,184 @@ export default function MoreArtist({ navigation }) {
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.8}
             style={styles.contentbox}
-            onPress={() => Alert.alert("Simple Button pressed")}
+            onPress={() => Alert.alert('Simple Button pressed')}
           >
             <Image
               style={styles.Images}
-              source={require("../../assets/img1.jpg")}
+              source={require('../../assets/img1.jpg')}
             />
             <Text style={styles.contentname}>5</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: 'black',
   },
   scrollView: {
-    backgroundColor: "white",
+    backgroundColor: 'black',
     marginHorizontal: 20,
   },
   header: {
     flex: 1,
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
-  title: {},
+  title: {
+    color: 'white',
+  },
   counto: {
     flex: 1,
+    color: 'white',
   },
   content: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   contentbox: {},
-  contentname: {},
+  contentname: {
+    color: 'white',
+    textAlign: 'center',
+  },
   backIcon: {
     flex: 3,
   },
@@ -216,4 +222,4 @@ const styles = StyleSheet.create({
   backIcon: {
     marginLeft: 20,
   },
-});
+})
